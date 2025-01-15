@@ -8,6 +8,12 @@
       <module name="wirethread-network" target="17" />
       <module name="wirethread-network.main" target="17" />
       <module name="wirethread-network.test" target="17" />
+      <module name="wirethread-plugin" target="17" />
+      <module name="wirethread-plugin.main" target="17" />
+      <module name="wirethread-plugin.test" target="17" />
+      <module name="wirethread-server" target="17" />
+      <module name="wirethread-server.main" target="17" />
+      <module name="wirethread-server.test" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

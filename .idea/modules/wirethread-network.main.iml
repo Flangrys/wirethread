@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="wirethread-network:main" external.linked.project.path="$MODULE_DIR$/../../wirethread-network" external.root.project.path="$MODULE_DIR$/../../wirethread-network" external.system.id="GRADLE" external.system.module.group="com.wirethread.network" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_17">
+  <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$/../../wirethread-network/build/classes/java/main" />
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../wirethread-network/src/main">
@@ -11,6 +11,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: io.netty:netty-all:4.1.116.Final" level="project" />
     <orderEntry type="library" name="Gradle: org.jetbrains:annotations:24.0.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-core:2.23.1" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-buffer:4.1.116.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec:4.1.116.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-codec-dns:4.1.116.Final" level="project" />
@@ -38,6 +39,7 @@
     <orderEntry type="library" name="Gradle: io.netty:netty-transport-classes-epoll:4.1.116.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-transport-classes-kqueue:4.1.116.Final" level="project" />
     <orderEntry type="library" name="Gradle: io.netty:netty-resolver-dns-classes-macos:4.1.116.Final" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.logging.log4j:log4j-api:2.23.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-transport-native-epoll:linux-aarch_64:4.1.116.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-transport-native-epoll:linux-riscv64:4.1.116.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-transport-native-epoll:linux-x86_64:4.1.116.Final" level="project" />
@@ -45,6 +47,5 @@
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-transport-native-kqueue:osx-x86_64:4.1.116.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-resolver-dns-native-macos:osx-aarch_64:4.1.116.Final" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Gradle: io.netty:netty-resolver-dns-native-macos:osx-x86_64:4.1.116.Final" level="project" />
-    <orderEntry type="module" module-name="wirethread-core.main" />
   </component>
 </module>

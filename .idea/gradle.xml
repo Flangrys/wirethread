@@ -20,6 +20,26 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-plugin" />
+        <option name="gradleHome" value="" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/wirethread-plugin" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-server" />
+        <option name="gradleHome" value="" />
+        <option name="gradleJvm" value="corretto-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/wirethread-server" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
   </component>
 </project>
