@@ -12,7 +12,7 @@ public record BundlePacket() implements Packet<BundlePacket> {
 
     @Override
     public PacketBound getBound() {
-        return PacketBound.Clientbound;
+        return PacketBound.ClientBound;
     }
 
     @Override

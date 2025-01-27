@@ -12,7 +12,7 @@ public record StatusRequestPacket() implements Packet<StatusRequestPacket> {
 
     @Override
     public PacketBound getBound() {
-        return PacketBound.Serverbound;
+        return PacketBound.ServerBound;
     }
 
     @Override

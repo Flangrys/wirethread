@@ -16,7 +16,7 @@ public record StatusResponsePacket(@NotNull String jsonResponse) implements Pack
 
     @Override
     public PacketBound getBound() {
-        return PacketBound.Clientbound;
+        return PacketBound.ClientBound;
     }
 
     @Override

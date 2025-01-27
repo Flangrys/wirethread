@@ -4,38 +4,14 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-core" />
-        <option name="gradleJvm" value="corretto-17" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#JAVA_HOME" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/wirethread-core" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-network" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/wirethread-network" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-plugin" />
-        <option name="gradleHome" value="" />
-        <option name="gradleJvm" value="corretto-17" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/wirethread-plugin" />
-          </set>
-        </option>
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/wirethread-server" />
-        <option name="gradleHome" value="" />
-        <option name="gradleJvm" value="corretto-17" />
-        <option name="modules">
-          <set>
             <option value="$PROJECT_DIR$/wirethread-server" />
           </set>
         </option>

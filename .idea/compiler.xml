@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="wirethread-core" target="17" />
-      <module name="wirethread-core.main" target="17" />
-      <module name="wirethread-core.test" target="17" />
-      <module name="wirethread-network" target="17" />
-      <module name="wirethread-network.main" target="17" />
-      <module name="wirethread-network.test" target="17" />
-      <module name="wirethread-plugin" target="17" />
-      <module name="wirethread-plugin.main" target="17" />
-      <module name="wirethread-plugin.test" target="17" />
-      <module name="wirethread-server" target="17" />
-      <module name="wirethread-server.main" target="17" />
-      <module name="wirethread-server.test" target="17" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="21" />
   </component>
 </project>

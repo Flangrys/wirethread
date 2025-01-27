@@ -2,7 +2,6 @@ package com.wirethread.network.packet;
 
 import com.wirethread.network.buffer.Buffer;
 import com.wirethread.network.buffer.Type;
-import com.wirethread.network.buffer.TypeImpl;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Function;
@@ -46,7 +45,7 @@ public final class PacketTemplate {
      * @return A {@link Type} instance for the type {@code R}.
      */
     public static <R> Type<R> template(Supplier<R> supplier) {
-        return new TypeImpl<R>() {
+        return new Type<R>() {
             @Override
             public void write(@NotNull Buffer buffer, R value) {
             }
@@ -72,7 +71,7 @@ public final class PacketTemplate {
      * @return A {@link Type} instance for the type {@code R}.
      */
     public static <P, R> Type<R> template(Type<P> primitive, Function<R, P> field, Constructor<P, R> packetConstructor) {
-        return new TypeImpl<>() {
+        return new Type<>() {
             @Override
             public void write(@NotNull Buffer buffer, R value) {
                 primitive.write(buffer, field.apply(value));

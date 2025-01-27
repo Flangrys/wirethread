@@ -68,7 +68,7 @@ public record Namespace(String domain, String path) {
     }
 
     /**
-     * Retrieves the namespace module base on the '/' separator.
+     * Retrieves the namespace module base on the '.' separator.
      * @return null.
      */
     @ApiStatus.Experimental
@@ -77,9 +77,10 @@ public record Namespace(String domain, String path) {
     }
 
     /**
-     * Retrieves the namespace
+     * Retrieves the namespace path base on the '/' separator.
      * @return null.
      */
+    @ApiStatus.Experimental
     public String[] getPath() {
         throw new UnsupportedOperationException("Not implemented yet.");
     }

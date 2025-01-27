@@ -1,4 +1,4 @@
 package com.wirethread.core.registry;
 
-public final class Registries {
+public interface Registries {
 }

@@ -17,7 +17,7 @@ public interface Type<T> {
      * Serializes a value of type {@code T} and writes it to the given {@link Buffer}.
      *
      * @param buffer The {@link Buffer} to which the serialized value will be written. Must not be null.
-     * @param value The value to serialize. Must not be null.
+     * @param value The value to serialize.
      * @throws IllegalArgumentException If the value cannot be serialized.
      * @throws IllegalStateException If an error occurs during writing to the buffer.
      */
@@ -32,26 +32,5 @@ public interface Type<T> {
      * @throws IllegalStateException If an error occurs during reading from the buffer.
      */
     T read(@NotNull Buffer buffer);
-
-    /**
-     * Calculates the size in bytes of the serialized representation of the given value.
-     * The calculation may depend on additional context provided by {@code Registries}.
-     *
-     * @param value The value whose serialized size is being calculated. Must not be null.
-     * @param registries Additional contextual information that may influence the size calculation. Can be null.
-     * @return The size in bytes of the serialized value.
-     * @throws IllegalArgumentException If the value is invalid or cannot be measured.
-     */
-    long sizeOf(@NotNull T value, @Nullable Registries registries);
-
-    /**
-     * Calculates the size in bytes of the serialized representation of the given value,
-     * without requiring additional context.
-     *
-     * @param value The value whose serialized size is being calculated. Must not be null.
-     * @return The size in bytes of the serialized value.
-     * @throws IllegalArgumentException If the value is invalid or cannot be measured.
-     */
-    long sizeOf(@NotNull T value);
 }
 

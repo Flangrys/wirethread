@@ -1,9 +1,9 @@
 # Wirethread | Fast and simple-to-use Minecraft Server.
 
-# Wiki
-[See](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Main_Page)
+# Minecraft Wiki
 
-This is an in-development project that may contain so many bugs.
+[Main](https://minecraft.wiki/w/Minecraft_Wiki:Projects/wiki.vg_merge/Main_Page)
+[Protocol](https://prismarinejs.github.io/minecraft-data/protocol/)
 
 # Global Objectives:
 

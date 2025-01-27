@@ -1,63 +1,137 @@
 package com.wirethread.network.buffer;
 
-import com.wirethread.core.registry.Registries;
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.Channel;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.ref.Cleaner;
+import java.io.IOException;
 import java.util.function.Consumer;
 
+/**
+ * This interface defines a minimal wrapper for the {@link ByteBuf} buffer
+ * providing access to packet-related methods and other IO-related features.
+ */
 public interface Buffer {
 
-    Cleaner REF_CLEANER = Cleaner.create();
+    int INITIAL_BUFFER_SIZE = 4096;
 
-    long DUMMY_ADDRESS = -1;
+    /**
+     * Asserts when this buffer is a dummy buffer.
+     * @throws UnsupportedOperationException If the buffer is a dummy buffer.
+     */
+    default void assertDummyBuffer() throws UnsupportedOperationException {
+        if (this.isDummyOnly()) throw new UnsupportedOperationException("Buffer is dummy.");
+    }
 
+    /**
+     * Asserts when this buffer is a read-only buffer.
+     * @throws UnsupportedOperationException If the buffer is a read-only buffer.
+     */
+    default void assertReadOnlyBuffer() throws UnsupportedOperationException {
+        if (this.isReadOnly()) throw new UnsupportedOperationException("Buffer is read-only.");
+    }
+
+    /**
+     * Retrieves the internal memory address for this buffer.
+     *
+     * @return An integer which represents a memory address.
+     * @apiNote Do not share this memory address.
+     */
+    long address();
+
+    /**
+     * Writes a specific type of packet into the buffer.
+     * @param type The packet class.
+     * @param value The packet value.
+     * @param <T> The kind of the packet.
+     * @throws IndexOutOfBoundsException If the buffer run out of space.
+     */
     <T> void write(@NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
 
+    /**
+     * Reads a specific type of packet from the buffer.
+     * @param type The packet class.
+     * @return A new packet instance.
+     * @param <T> The packet type.
+     * @throws IndexOutOfBoundsException If the buffer does not contain the specified packet.
+     */
     <T> T read(@NotNull Type<T> type) throws IndexOutOfBoundsException;
 
-    <T> void writeAt(long index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
+    void putBytes(int index, byte @NotNull [] byteArray);
 
-    <T> void readAt(long index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
+    void putByte(int index, byte value);
 
-    Buffer copy(long index, long length, long readIndex, long writeIndex);
-    Buffer copy(long index, long length);
+    void getBytes(int index, byte @NotNull [] byteArray);
 
-    void copyTo(long srcOffset, byte @NotNull [] dest, long destOffset, long length);
+    byte getByte(int index);
+
+    <T> void writeAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
+
+    <T> void readAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
+
+    /**
+     * Write at the given channel returning the amount of written bytes.
+     * @param channel A netty channel.
+     * @return True if it has not remaining chunks to be written.
+     * @throws IOException If the channel was closed.
+     */
+    boolean writeChannel(Channel channel) throws IOException;
+
+    /**
+     *
+     * @param channel A netty channel.
+     * @return The amount of read bytes.
+     * @throws IOException Is the channel was closed.
+     */
+    int readChannel(Channel channel) throws IOException;
+
+
+    @NotNull
+    Buffer copy(int index, int length, int readIndex, int writeIndex);
+
+    @NotNull
+    Buffer copy(int index, int length);
+
+    void copyTo(int srcOffset, byte @NotNull [] dest, int destOffset, int length);
 
     byte @NotNull [] extractBytes(@NotNull Consumer<Buffer> filter);
 
-    @NotNull Buffer clear();
+    @NotNull
+    Buffer clear();
 
-    long writeIndex();
-    @NotNull Buffer writeIndex(long writeIndex);
+    boolean release();
 
-    long readIndex();
-    @NotNull Buffer readIndex(long readIndex);
+    int writeIndex();
 
-    @NotNull Buffer index(long readIndex, long writeIndex);
+    @NotNull
+    Buffer writeIndex(int writeIndex);
 
-    long advanceWrite(long length);
+    int readIndex();
 
-    long advanceRead(long length);
+    @NotNull
+    Buffer readIndex(int readIndex);
 
-    long readableBytes();
+    @NotNull
+    Buffer index(int readIndex, int writeIndex);
 
-    long writeableBytes();
+    int advanceWrite(int length);
 
-    long capacity();
+    int advanceRead(int length);
 
+    int readableBytes();
+
+    int writeableBytes();
+
+    int capacity();
+
+    @NotNull
+    Buffer capacity(int newCapacity);
+
+    boolean isDummyOnly();
 
     boolean isReadOnly();
 
-    /**
-     * Set this buffer as read-only.
-     */
-    void readOnly();
-
-    void resize(long newSize);
-
-    void ensureWritable(long length);
+    void ensureWritable(int length);
 
     void compact();
 }
