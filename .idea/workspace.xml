@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="impl: Implementing the basic protocol types and its test.">
+      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/nbt/Tokens.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/packet/PacketTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/buffer/BufferImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/buffer/BufferImplTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="impl: Implementing the basic protocol types and its test." />
+    <option name="LAST_COMMIT_MESSAGE" value="impl: Implementing the basic protocol types and its test." />
+  </component>
+</project>

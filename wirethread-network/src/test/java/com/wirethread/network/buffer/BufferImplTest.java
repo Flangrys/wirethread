@@ -1,5 +1,6 @@
 package com.wirethread.network.buffer;
 
+import com.wirethread.network.packet.server.status.StatusResponsePacket;
 import com.wirethread.network.types.BooleanType;
 import com.wirethread.network.types.StringType;
 import org.apache.logging.log4j.LogManager;
@@ -118,5 +119,29 @@ class BufferImplTest {
         releaseBuffer(dummyBuffer);
 
         assertEquals(bytesWrittenDummy, bytesWrittenReference);
+    }
+
+    @Test
+    void testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket() {
+        final String JSON_RESPONSE = "{'response': 'Minecraft Server 1.21.2 - By Wirethread V0.1.0'}";
+
+        logger.trace("Creating new dummy buffer.");
+        final Buffer dummyBuffer = new BufferImpl(INITIAL_BUFFER_SIZE, null);
+        logBufferInfo(dummyBuffer);
+
+        logger.trace("Writing the dummy packet: StatusResponsePacket{'jsonResponse':'...'}");
+        dummyBuffer.write(StatusResponsePacket.SERIALIZER, new StatusResponsePacket(JSON_RESPONSE));
+        logBufferStats(dummyBuffer);
+
+        logger.trace("Reading the dummy buffer.");
+        final StatusResponsePacket packet = dummyBuffer.read(StatusResponsePacket.SERIALIZER);
+        logBufferStats(dummyBuffer);
+
+        logger.info("Read value: {}", packet.jsonResponse());
+        logBufferInfo(dummyBuffer);
+
+        releaseBuffer(dummyBuffer);
+
+        assertEquals(packet.jsonResponse(), JSON_RESPONSE);
     }
 }
