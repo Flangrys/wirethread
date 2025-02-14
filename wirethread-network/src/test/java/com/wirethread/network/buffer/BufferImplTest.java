@@ -1,5 +1,6 @@
 package com.wirethread.network.buffer;
 
+import com.wirethread.network.packet.Packet;
 import com.wirethread.network.packet.server.status.StatusResponsePacket;
 import com.wirethread.network.types.BooleanType;
 import com.wirethread.network.types.StringType;
@@ -9,14 +10,24 @@ import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 
 import static com.wirethread.network.buffer.Buffer.INITIAL_BUFFER_SIZE;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class BufferImplTest {
 
     private static final Logger logger = LogManager.getLogger(BufferImplTest.class);
 
     private static final boolean DUMMY_BOOLEAN = false;
+    private static final String DUMMY_MOTD = "{'response': 'Minecraft Server 1.21.2 - By Wirethread V0.1.0'}";
     private static final String DUMMY_STRING = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
+
+    private static @NotNull Buffer buildBuffer() {
+        final Buffer buffer = new DummyProtoBuffer(INITIAL_BUFFER_SIZE, null);
+
+        logger.info("Creating a new buffer with : {}", buffer);
+
+        return buffer;
+    }
 
     private static void releaseBuffer(final @NotNull Buffer buffer) {
         if (buffer.release()) {
@@ -24,124 +35,99 @@ class BufferImplTest {
         } else {
             logger.warn("The buffer still allocated.");
         }
-
     }
 
-    private static void logBufferInfo(final @NotNull Buffer buffer) {
-        logger.info("Showing dummy buffer info: C{} bytes <- rx{} | wx{}", buffer.capacity(), buffer.readIndex(), buffer.writeIndex());
+    private static <T> void traceWriteMethod(Class<? extends Type<T>> type, T value) {
+        logger.info("Writing: '{}' of type <{}> into the buffer.", type.getName(), value);
     }
 
-    private static void logBufferStats(final @NotNull Buffer buffer) {
-        logger.info("Showing dummy buffer stats: C{} bytes <- w{} bytes | r{} bytes", buffer.capacity(), buffer.writeableBytes(), buffer.readableBytes());
+    private static <T> void traceReadMethod(Class<? extends Type<T>> type, T value) {
+        logger.info("Reading: '{}' of type <{}> from the buffer.", type.getName(), value);
     }
 
     @Test
     void testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue() {
-        logger.trace("Creating new dummy buffer.");
-        final Buffer dummyBuffer = new BufferImpl(INITIAL_BUFFER_SIZE, null);
-        logBufferInfo(dummyBuffer);
+        final Buffer buffer = buildBuffer();
 
-        logger.trace("Writing the dummy string: {}", DUMMY_BOOLEAN);
-        dummyBuffer.write(new BooleanType(), DUMMY_BOOLEAN);
-        logBufferStats(dummyBuffer);
+        traceWriteMethod(BooleanType.class, DUMMY_BOOLEAN);
+        buffer.write(new BooleanType(), DUMMY_BOOLEAN);
 
-        logger.trace("Reading the dummy string.");
-        final boolean value = dummyBuffer.read(new BooleanType());
-        logBufferStats(dummyBuffer);
+        final boolean value = buffer.read(new BooleanType());
+        traceReadMethod(BooleanType.class, value);
 
-        logBufferInfo(dummyBuffer);
-        logger.info("Read value: {}", value);
+        logger.info(buffer);
+        releaseBuffer(buffer);
 
-        releaseBuffer(dummyBuffer);
-
-        assertEquals(value, DUMMY_BOOLEAN);
+        assertEquals(DUMMY_BOOLEAN, value);
     }
 
     @Test
     void tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue() {
-        logger.trace("Creating new dummy buffer.");
-        final Buffer dummyBuffer = new BufferImpl(INITIAL_BUFFER_SIZE, null);
-        logBufferInfo(dummyBuffer);
+        final Buffer buffer = buildBuffer();
 
-        logger.trace("Writing the dummy string: {}", DUMMY_STRING);
-        dummyBuffer.write(new StringType(), DUMMY_STRING);
-        logBufferStats(dummyBuffer);
+        traceWriteMethod(StringType.class, DUMMY_STRING);
+        buffer.write(new StringType(), DUMMY_STRING);
 
+        final String value = buffer.read(new StringType());
+        traceReadMethod(StringType.class, value);
 
-        logger.trace("Reading the dummy string.");
-        final String value = dummyBuffer.read(new StringType());
-        logBufferStats(dummyBuffer);
-
-        logBufferInfo(dummyBuffer);
-        logger.info("Read value: {}", value);
-
-        releaseBuffer(dummyBuffer);
+        logger.info(buffer);
+        releaseBuffer(buffer);
 
         assertEquals(value, DUMMY_STRING);
     }
 
     @Test
     void testCopyMethodAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSameBuffer() {
-        logger.trace("Creating new dummy buffer.");
-        final Buffer dummyBuffer = BufferImpl.dummy(INITIAL_BUFFER_SIZE, null);
-        logBufferInfo(dummyBuffer);
+        final Buffer buffer = buildBuffer();
 
-        final Buffer dummyBufferCopy = dummyBuffer.copy(0, dummyBuffer.capacity());
-        logBufferInfo(dummyBufferCopy);
+        var bufferCopy = buffer.copy(0, buffer.capacity());
+        logger.info(bufferCopy);
 
-        assertEquals(dummyBuffer, dummyBufferCopy);
+        assertEquals(buffer, bufferCopy);
 
-        releaseBuffer(dummyBuffer);
-        releaseBuffer(dummyBufferCopy);
+        releaseBuffer(buffer);
+        releaseBuffer(bufferCopy);
     }
 
     @Test
     void testClearMethod_Using00AsIndex_ExpectingCleanTheBufferAndOverwriteValues() {
+
     }
 
     @Test
     void testMeasuringTheSizeOfATypeUsingADummyBuffer_WithAStringType_ExpectingMeasureThePacketSizeOfThePacket() {
-        logger.trace("Creating a new dummy buffer.");
-        final Buffer dummyBuffer = BufferImpl.dummy(INITIAL_BUFFER_SIZE, null);
-        logBufferInfo(dummyBuffer);
+        final Buffer buffer = buildBuffer();
 
         try {
-            dummyBuffer.write(new StringType(), DUMMY_STRING);
-            logBufferStats(dummyBuffer);
+            traceWriteMethod(StringType.class, DUMMY_STRING);
+            buffer.write(new StringType(), DUMMY_STRING);
         } catch (UnsupportedOperationException exc) {
             fail("This test fail because the write method should be allowed to write over a dummy buffer.");
         }
 
-        final int bytesWrittenDummy = dummyBuffer.writeIndex();
-        final int bytesWrittenReference = BufferImpl.sizeOf(new StringType(), DUMMY_STRING);
+        final int bytesWrittenDummy = buffer.writerIndex();
+        final int bytesWrittenReference = AbstractBuffer.sizeOf(new StringType(), "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.");
 
-        logBufferInfo(dummyBuffer);
-        releaseBuffer(dummyBuffer);
+        logger.info(buffer);
+        releaseBuffer(buffer);
 
         assertEquals(bytesWrittenDummy, bytesWrittenReference);
     }
 
     @Test
     void testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket() {
-        final String JSON_RESPONSE = "{'response': 'Minecraft Server 1.21.2 - By Wirethread V0.1.0'}";
+        final Buffer buffer = buildBuffer();
 
-        logger.trace("Creating new dummy buffer.");
-        final Buffer dummyBuffer = new BufferImpl(INITIAL_BUFFER_SIZE, null);
-        logBufferInfo(dummyBuffer);
+        traceWriteMethod(StringType.class, DUMMY_MOTD);
+        buffer.write(StatusResponsePacket.SERIALIZER, new StatusResponsePacket(DUMMY_MOTD));
 
-        logger.trace("Writing the dummy packet: StatusResponsePacket{'jsonResponse':'...'}");
-        dummyBuffer.write(StatusResponsePacket.SERIALIZER, new StatusResponsePacket(JSON_RESPONSE));
-        logBufferStats(dummyBuffer);
+        final StatusResponsePacket packet = buffer.read(StatusResponsePacket.SERIALIZER);
+        traceReadMethod(StringType.class, packet.jsonResponse());
 
-        logger.trace("Reading the dummy buffer.");
-        final StatusResponsePacket packet = dummyBuffer.read(StatusResponsePacket.SERIALIZER);
-        logBufferStats(dummyBuffer);
+        logger.info(buffer);
+        releaseBuffer(buffer);
 
-        logger.info("Read value: {}", packet.jsonResponse());
-        logBufferInfo(dummyBuffer);
-
-        releaseBuffer(dummyBuffer);
-
-        assertEquals(packet.jsonResponse(), JSON_RESPONSE);
+        assertEquals(DUMMY_MOTD, packet.jsonResponse());
     }
 }

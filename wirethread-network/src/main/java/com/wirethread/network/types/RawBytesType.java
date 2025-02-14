@@ -14,7 +14,7 @@ public record RawBytesType(int length) implements Type<byte[]> {
         if (value.length == 0) return;
 
         buffer.ensureWritable(value.length);
-        buffer.putBytes(buffer.writeIndex(), value);
+        buffer.putBytes(buffer.writerIndex(), value);
         buffer.advanceWrite(value.length);
     }
 
@@ -31,7 +31,7 @@ public record RawBytesType(int length) implements Type<byte[]> {
 
         final byte[] byteArray = new byte[byteArrayLength];
 
-        buffer.getBytes(buffer.readIndex(), byteArray);
+        buffer.getBytes(buffer.readerIndex(), byteArray);
         buffer.advanceRead(byteArrayLength);
 
         return byteArray;

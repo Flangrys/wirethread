@@ -32,30 +32,46 @@ public interface Buffer {
     }
 
     /**
-     * Retrieves the internal memory address for this buffer.
+     * Reads a specific type of object from the buffer.
      *
-     * @return An integer which represents a memory address.
-     * @apiNote Do not share this memory address.
-     */
-    long address();
-
-    /**
-     * Writes a specific type of packet into the buffer.
-     * @param type The packet class.
-     * @param value The packet value.
-     * @param <T> The kind of the packet.
-     * @throws IndexOutOfBoundsException If the buffer run out of space.
+     * @param type  A serialization type.
+     * @param value The {@link Type} to be written.
+     * @param <T>   The primitive type contained into the {@code Type<?>}.
+     * @throws IndexOutOfBoundsException When the {@param index} got out of range.
      */
     <T> void write(@NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
 
     /**
-     * Reads a specific type of packet from the buffer.
-     * @param type The packet class.
-     * @return A new packet instance.
-     * @param <T> The packet type.
-     * @throws IndexOutOfBoundsException If the buffer does not contain the specified packet.
+     * Writes a specific type of object to an index in the buffer.
+     *
+     * @param index The writer index.
+     * @param type  A deserialization type.
+     * @param value The {@code Type<?>} to be written.
+     * @param <T>   The primitive type contained into the {@code Type<?>}.
+     * @throws IndexOutOfBoundsException When the {@param index} got out of range.
+     */
+    <T> void writeAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
+
+    /**
+     * Reads a specific type of object from the buffer.
+     *
+     * @param type A deserialization type.
+     * @return A new {@link Type} instance of the deserialized type.
+     * @param <T> The primitive type contained into the {@code Type<?>}.
+     * @throws IndexOutOfBoundsException When the {@param index} got out of range.
      */
     <T> T read(@NotNull Type<T> type) throws IndexOutOfBoundsException;
+
+    /**
+     * Reads a specific type of object to an index in the buffer.
+     *
+     * @param index The reader index.
+     * @param type  The {@link Type} to read.
+     * @param value The {@code Type<?>} to be read.
+     * @param <T>   The primitive type contained into the {@code Type<?>}.
+     * @throws IndexOutOfBoundsException When the {@param index} got out of range.
+     */
+    <T> void readAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
 
     void putBytes(int index, byte @NotNull [] byteArray);
 
@@ -64,10 +80,6 @@ public interface Buffer {
     void getBytes(int index, byte @NotNull [] byteArray);
 
     byte getByte(int index);
-
-    <T> void writeAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
-
-    <T> void readAt(int index, @NotNull Type<T> type, T value) throws IndexOutOfBoundsException;
 
     /**
      * Write at the given channel returning the amount of written bytes.
@@ -87,7 +99,7 @@ public interface Buffer {
 
 
     @NotNull
-    Buffer copy(int index, int length, int readIndex, int writeIndex);
+    Buffer copy(int index, int length, int readerIndex, int writeIndex);
 
     @NotNull
     Buffer copy(int index, int length);
@@ -101,18 +113,18 @@ public interface Buffer {
 
     boolean release();
 
-    int writeIndex();
+    int writerIndex();
 
     @NotNull
-    Buffer writeIndex(int writeIndex);
+    Buffer writerIndex(int writerIndex);
 
-    int readIndex();
-
-    @NotNull
-    Buffer readIndex(int readIndex);
+    int readerIndex();
 
     @NotNull
-    Buffer index(int readIndex, int writeIndex);
+    Buffer readerIndex(int readerIndex);
+
+    @NotNull
+    Buffer index(int readerIndex, int writeIndex);
 
     int advanceWrite(int length);
 

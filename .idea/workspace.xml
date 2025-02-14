@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="impl: Implementing the basic protocol types and its test.">
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/nbt/Tokens.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/packet/PacketTest.java" afterDir="false" />
+    <list default="true" id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="test: Adding the write packet test to BufferImplTest.java">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/AbstractBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/DummyProtoBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/ReadOnlyProtoBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/Buffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/Buffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/BufferImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/BufferImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/Type.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/BooleanType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/BooleanType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/ByteType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/ByteType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/RawBytesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/RawBytesType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/VarIntType.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/types/VarIntType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/buffer/BufferImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/test/java/com/wirethread/network/buffer/BufferImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,17 +24,239 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "main"
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Flangrys&quot;
   }
-}]]></component>
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Flangrys/wirethread.git&quot;,
+    &quot;accountId&quot;: &quot;1e2d05f4-28f4-44ab-ae8f-9220bd0f2d7c&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.netty/netty-buffer/4.1.116.Final/b4ce85351a8b774b66449c24428c532d0c834d90/netty-buffer-4.1.116.Final-sources.jar!/io/netty/buffer/PooledByteBuf.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2sO53LZUnhgCpKnKp0UBMNS8sFU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.BufferImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BufferImplTest.tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BufferImplTest.testCastingBufferIntoADummyBuffer_WithoutArgs_ExpectingSuccessfullyCast.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BufferImplTest.testCopyMethodAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSameBuffer.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BufferImplTest.testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wirethread.network.buffer" />
+      <recent name="com.wirethread.network.internal" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.wirethread.network.internal" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket">
+    <configuration name="BufferImplTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":wirethread-network:test" />
+            <option value="--tests" />
+            <option value="&quot;com.wirethread.network.buffer.BufferImplTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BufferImplTest.tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":wirethread-network:test" />
+            <option value="--tests" />
+            <option value="&quot;com.wirethread.network.buffer.BufferImplTest.tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BufferImplTest.testCopyMethodAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSameBuffer" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":wirethread-network:test" />
+            <option value="--tests" />
+            <option value="&quot;com.wirethread.network.buffer.BufferImplTest.testCopyMethodAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSameBuffer&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BufferImplTest.testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":wirethread-network:test" />
+            <option value="--tests" />
+            <option value="&quot;com.wirethread.network.buffer.BufferImplTest.testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":wirethread-network:test" />
+            <option value="--tests" />
+            <option value="&quot;com.wirethread.network.buffer.BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket" />
+        <item itemvalue="Gradle.BufferImplTest.tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue" />
+        <item itemvalue="Gradle.BufferImplTest" />
+        <item itemvalue="Gradle.BufferImplTest.testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue" />
+        <item itemvalue="Gradle.BufferImplTest.testCopyMethodAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSameBuffer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="impl: Implementing the basic protocol types and its test." />
+      <created>1738313584878</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738313584878</updated>
+    </task>
+    <task id="LOCAL-00001" summary="test: Adding the write packet test to BufferImplTest.java">
+      <option name="closed" value="true" />
+      <created>1738313831928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738313831928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="impl: Implementing the basic protocol types and its test." />
-    <option name="LAST_COMMIT_MESSAGE" value="impl: Implementing the basic protocol types and its test." />
+    <MESSAGE value="test: Adding the write packet test to BufferImplTest.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="test: Adding the write packet test to BufferImplTest.java" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/AbstractBuffer.java</url>
+          <line>227</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

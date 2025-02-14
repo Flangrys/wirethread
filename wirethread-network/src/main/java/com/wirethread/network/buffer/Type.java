@@ -1,8 +1,6 @@
 package com.wirethread.network.buffer;
 
-import com.wirethread.core.registry.Registries;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Represents a generic type that can handle serialization and deserialization

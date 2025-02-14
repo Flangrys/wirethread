@@ -14,12 +14,12 @@ public record VarIntType() implements Type<Integer> {
     public void write(@NotNull Buffer buffer, Integer value) {
         buffer.ensureWritable(MINIMAL_INTEGER_LENGTH_SIZE);
 
-        int writeIndex = buffer.writeIndex();
+        int writeIndex = buffer.writerIndex();
 
         while (true) {
             if ((value & ~INTEGER_SEGMENT_BITS) == 0) {
                 buffer.putByte(writeIndex++, value.byteValue());
-                buffer.advanceWrite(writeIndex - buffer.writeIndex());
+                buffer.advanceWrite(writeIndex - buffer.writerIndex());
                 return;
             }
             buffer.putByte(writeIndex++, (byte) ((value & INTEGER_SEGMENT_BITS) | INTEGER_CONTINUE_BIT));
@@ -28,7 +28,7 @@ public record VarIntType() implements Type<Integer> {
     }
     @Override
     public Integer read(@NotNull Buffer buffer) {
-        int readIndex = buffer.readIndex();
+        int readIndex = buffer.readerIndex();
         int result = 0;
         int shift = 0;
 
@@ -38,7 +38,7 @@ public record VarIntType() implements Type<Integer> {
 
             // When there are not remaining bytes left, then update the index and return the result.
             if (readByte >= 0) {
-                buffer.advanceRead(readIndex - buffer.readIndex());
+                buffer.advanceRead(readIndex - buffer.readerIndex());
                 return result;
             }
 
