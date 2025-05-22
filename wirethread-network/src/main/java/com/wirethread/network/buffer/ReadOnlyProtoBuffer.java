@@ -1,6 +1,6 @@
 package com.wirethread.network.buffer;
 
-import com.wirethread.core.registry.Registries;
+import com.wirethread.core.registry.records.DynamicRegistries;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import org.jetbrains.annotations.NotNull;
@@ -11,7 +11,7 @@ import java.util.function.Consumer;
 
 public final class ReadOnlyProtoBuffer extends AbstractBuffer{
 
-    ReadOnlyProtoBuffer(@NotNull ByteBuf buffer, @Nullable Registries registries) {
+    ReadOnlyProtoBuffer(@NotNull ByteBuf buffer, @Nullable DynamicRegistries registries) {
         super(buffer, registries);
     }
 

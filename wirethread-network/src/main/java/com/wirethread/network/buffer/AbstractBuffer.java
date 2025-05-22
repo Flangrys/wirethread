@@ -1,6 +1,6 @@
 package com.wirethread.network.buffer;
 
-import com.wirethread.core.registry.Registries;
+import com.wirethread.core.registry.records.DynamicRegistries;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufAllocator;
 import io.netty.buffer.PooledByteBufAllocator;
@@ -13,19 +13,19 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class AbstractBuffer implements Buffer {
-    protected final @Nullable Registries registries;
+    protected final @Nullable DynamicRegistries registries;
     protected final @NotNull ByteBuf buffer;
 
-    protected AbstractBuffer(int initialCapacity, ByteBufAllocator alloc, @Nullable Registries registries) {
+    protected AbstractBuffer(int initialCapacity, ByteBufAllocator alloc, @Nullable DynamicRegistries registries) {
         this.buffer = alloc.buffer(initialCapacity);
         this.registries = registries;
     }
 
-    protected AbstractBuffer(int initialCapacity, @Nullable Registries registries) {
+    protected AbstractBuffer(int initialCapacity, @Nullable DynamicRegistries registries) {
         this(initialCapacity, PooledByteBufAllocator.DEFAULT, registries);
     }
 
-    protected AbstractBuffer(@NotNull ByteBuf buffer, @Nullable Registries registries) {
+    protected AbstractBuffer(@NotNull ByteBuf buffer, @Nullable DynamicRegistries registries) {
         this.registries = registries;
         this.buffer = buffer;
     }
