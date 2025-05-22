@@ -7,7 +7,6 @@ public interface Pluggable {
 
     /**
      * Retrieves the name of this plugin.
-     * @return A
      */
     @NotNull
     @Pattern("[a-zA-Z0-9]+")
