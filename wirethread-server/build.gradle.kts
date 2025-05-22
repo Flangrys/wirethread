@@ -15,6 +15,9 @@ dependencies {
 
     implementation("org.jetbrains:annotations:24.0.0")
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
+
+    implementation(project(":wirethread-core"))
+    implementation(project(":wirethread-network"))
 }
 
 tasks.test {

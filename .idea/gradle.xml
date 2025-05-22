@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/wirethread-core" />
+            <option value="$PROJECT_DIR$/wirethread-nbt" />
             <option value="$PROJECT_DIR$/wirethread-network" />
             <option value="$PROJECT_DIR$/wirethread-plugin" />
             <option value="$PROJECT_DIR$/wirethread-server" />
