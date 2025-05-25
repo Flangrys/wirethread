@@ -14,6 +14,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
 
     implementation("org.jetbrains:annotations:24.0.0")
+    implementation("io.netty:netty-all:4.1.121.Final")
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
 
     implementation(project(":wirethread-core"))

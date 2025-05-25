@@ -15,7 +15,7 @@ dependencies {
 
     testImplementation(project(":wirethread-core"))
 
-    implementation("io.netty:netty-all:4.1.116.Final")
+    implementation("io.netty:netty-all:4.1.121.Final")
     implementation("org.jetbrains:annotations:24.0.0")
     implementation("org.apache.logging.log4j:log4j-core:2.23.1")
 
