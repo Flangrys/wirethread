@@ -4,64 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="impl(Buffer): Refactoring the buffer implementation.">
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/biome/BiomeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/block/BlockManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/exceptions/InvalidResourceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/exceptions/UnsafeContextOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/gameplay/advancement/AdvancementManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/gameplay/bossbar/BossBarManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/gameplay/recipe/RecipeManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/gameplay/team/TeamManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/annotations/NamespacePattern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/utils/NamespaceFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/records/DynamicRegistries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/records/StaticRegistries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/DynamicRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registrable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/StaticRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/resources/JsonResourceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/resources/ReadOnlyResourceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/resources/ResourceManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/resources/Resources.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/utils/RegistryFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/tag/TagManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/testing/ContextProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/testing/TestingContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/world/WorldManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-nbt/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-nbt/src/main/java/com/wirethread/nbt/NbtSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/socket/SocketServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerTick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/benchmark/BenchmarkManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/command/CommandManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/event/GlobalEventManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/exception/ExceptionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/scheduler/SchedulerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="3f02bb43-9f66-4313-a786-c1e58686342b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/connection/adapters/PlayerConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/packet/PacketInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/packet/PacketParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/packet/client/ClientPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/packet/server/ServerPacket.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/registry/records/PacketRegistries.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/registry/repository/PacketRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/thread/ServerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/thread/SocketServerThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/thread/TickServerThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/Namespace.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/Namespace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/exceptions/InvalidResourceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/exceptions/InvalidResourceException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/Namespaced.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/namespaces/Namespaced.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/nbt/Tokens.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/Registries.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/records/StaticRegistries.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/records/StaticRegistries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/DynamicRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/DynamicRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registrable.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registrable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registry.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/Registry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/StaticRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/registry/repository/StaticRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/testing/TestingContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/testing/TestingContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-nbt/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-nbt/src/main/java/com/wirethread/nbt/NbtSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-core/src/main/java/com/wirethread/core/nbt/NbtSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-network/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/AbstractBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/AbstractBuffer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/settings.gradle.kts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/BufferImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/BufferImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/DummyProtoBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/DummyProtoBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/ReadOnlyProtoBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/buffer/ReadOnlyProtoBuffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-plugin/src/main/java/com/wirethread/plugin/Pluggable.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-plugin/src/main/java/com/wirethread/plugin/Pluggable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-network/src/main/java/com/wirethread/network/socket/SocketServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-plugin/settings.gradle.kts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-server/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-server/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/ServerTick.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/WirethreadServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/WirethreadServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/properties/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/flags/FlagsProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/exception/ExceptionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/java/com/wirethread/server/exception/ExceptionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/wirethread-server/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/wirethread-server/src/main/resources/log4j2.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +72,15 @@
         <task path="$PROJECT_DIR$/wirethread-core">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/wirethread-nbt">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/wirethread-network">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/wirethread-plugin">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -111,9 +100,12 @@
       <list>
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Interface" />
+        <option value="Kotlin Script" />
         <option value="Record" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="package-info" />
+        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -126,6 +118,9 @@
     &quot;assignee&quot;: &quot;Flangrys&quot;
   }
 }</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="1e2d05f4-28f4-44ab-ae8f-9220bd0f2d7c" />
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Flangrys/wirethread.git&quot;,
@@ -146,6 +141,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
     "Gradle.BufferImplTest.executor": "Run",
     "Gradle.BufferImplTest.tesWriteAStringValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue.executor": "Run",
     "Gradle.BufferImplTest.testCastingBufferIntoADummyBuffer_WithoutArgs_ExpectingSuccessfullyCast.executor": "Run",
@@ -153,6 +149,7 @@
     "Gradle.BufferImplTest.testWriteABooleanValueIntoADummyBuffer_WithCorrectInputs_ExpectingReadTheSameValue.executor": "Run",
     "Gradle.BufferImplTest.testWriteAPacketAndCheckingIfBothAreEquals_WithoutArgs_ExpectingComparingTheSamePacket.executor": "Run",
     "Gradle.Download Sources.executor": "Run",
+    "Gradle.Load Gradle Dependencies.executor": "Run",
     "Gradle.NamespaceTest.executor": "Run",
     "Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleInvalidArguments_expectingNotAFailure.executor": "Run",
     "Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleValidArguments_expectingNoErrors.executor": "Run",
@@ -167,14 +164,17 @@
     "Gradle.wirethread:wirethread-server [build].executor": "Run",
     "Java Scratch.Scratch (1).executor": "Run",
     "Java Scratch.Scratch.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font"
   },
   "keyToStringList": {
     "GitStage.ChangesTree.GroupingKeys": [
@@ -189,71 +189,23 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.wirethread.network.packet" />
+      <recent name="com.wirethread.network.connection" />
+      <recent name="com.wirethread.server.thread" />
       <recent name="com.wirethread.core.exceptions" />
       <recent name="com.wirethread.core.registry" />
-      <recent name="com.wirethread.core.registry.repository" />
-      <recent name="com.wirethread.server" />
-      <recent name="com.wirethread.core.gameplay.team" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.wirethread.network.internal" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server Launcher">
+  <component name="RunManager" selected="Gradle.wirethread [clean]">
     <configuration name="Server Launcher" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.wirethread.server.WirethreadServer" />
       <module name="wirethread.wirethread-server.main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="NamespaceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":wirethread-core:test" />
-            <option value="--tests" />
-            <option value="&quot;com.wirethread.core.namespaces.NamespaceTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="NamespaceTest.testNamespaceFromMethod_withMultipleInvalidArguments_expectingNotAFailure" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":wirethread-core:test" />
-            <option value="--tests" />
-            <option value="&quot;com.wirethread.core.namespaces.NamespaceTest.testNamespaceFromMethod_withMultipleInvalidArguments_expectingNotAFailure&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
     </configuration>
     <configuration name="NamespaceTest.testNamespaceFromMethod_withMultipleValidArguments_expectingNoErrors" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -277,6 +229,50 @@
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="wirethread [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="wirethread [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="jar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="wirethread [javadoc]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -310,19 +306,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Server Launcher" />
-      <item itemvalue="Gradle.NamespaceTest" />
-      <item itemvalue="Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleInvalidArguments_expectingNotAFailure" />
+      <item itemvalue="Gradle.wirethread [clean]" />
+      <item itemvalue="Gradle.wirethread [jar]" />
       <item itemvalue="Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleValidArguments_expectingNoErrors" />
       <item itemvalue="Gradle.wirethread [javadoc]" />
       <item itemvalue="Java Scratch.Scratch (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Java Scratch.Scratch (1)" />
-        <item itemvalue="Gradle.wirethread [javadoc]" />
+        <item itemvalue="Gradle.wirethread [clean]" />
         <item itemvalue="Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleValidArguments_expectingNoErrors" />
-        <item itemvalue="Gradle.NamespaceTest.testNamespaceFromMethod_withMultipleInvalidArguments_expectingNotAFailure" />
-        <item itemvalue="Gradle.NamespaceTest" />
+        <item itemvalue="Gradle.wirethread [jar]" />
+        <item itemvalue="Gradle.wirethread [javadoc]" />
+        <item itemvalue="Java Scratch.Scratch (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -351,13 +347,114 @@
       <option name="project" value="LOCAL" />
       <updated>1739522941322</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="build(Gradle): Updating projects dependencies.">
+      <option name="closed" value="true" />
+      <created>1747873717900</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747873717900</updated>
+    </task>
+    <task id="LOCAL-00004" summary="impl(registry): Implementing the server registry.">
+      <option name="closed" value="true" />
+      <created>1747873958037</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747873958037</updated>
+    </task>
+    <task id="LOCAL-00005" summary="impl(namespace): Extending namespace implementation.">
+      <option name="closed" value="true" />
+      <created>1747874046740</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747874046740</updated>
+    </task>
+    <task id="LOCAL-00006" summary="impl(testing): Implementing a context provider for testing proposes.">
+      <option name="closed" value="true" />
+      <created>1747874183106</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747874183106</updated>
+    </task>
+    <task id="LOCAL-00007" summary="impl(nbt): Adding a dummy nbt serializer.">
+      <option name="closed" value="true" />
+      <created>1747874435861</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747874435861</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor(network): Refactoring a registry-dependent implementation.">
+      <option name="closed" value="true" />
+      <created>1747874591586</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1747874591586</updated>
+    </task>
+    <task id="LOCAL-00009" summary="impl(server): Implementing an extensible server entity.">
+      <option name="closed" value="true" />
+      <created>1747874666005</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1747874666005</updated>
+    </task>
+    <task id="LOCAL-00010" summary="impl(resources): Adding server entity resources.">
+      <option name="closed" value="true" />
+      <created>1747875046946</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1747875046946</updated>
+    </task>
+    <task id="LOCAL-00011" summary="doc(Pluggable): *">
+      <option name="closed" value="true" />
+      <created>1747875110714</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1747875110714</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: Modifying the logging config file.">
+      <option name="closed" value="true" />
+      <created>1747875388844</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1747875388844</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="impl: Implementing the basic protocol types and its test." />
     <MESSAGE value="test: Adding the write packet test to BufferImplTest.java" />
     <MESSAGE value="impl(Buffer): Refactoring the buffer implementation." />
-    <option name="LAST_COMMIT_MESSAGE" value="impl(Buffer): Refactoring the buffer implementation." />
+    <MESSAGE value="build(Gradle): Updating projects dependencies." />
+    <MESSAGE value="impl(registry): Implementing the server registry." />
+    <MESSAGE value="impl(namespace): Extending namespace implementation." />
+    <MESSAGE value="impl(testing): Implementing a context provider for testing proposes." />
+    <MESSAGE value="impl(nbt): Adding a dummy nbt serializer." />
+    <MESSAGE value="refactor(network): Refactoring a registry-dependent implementation." />
+    <MESSAGE value="impl(server): Implementing an extensible server entity." />
+    <MESSAGE value="impl(resources): Adding server entity resources." />
+    <MESSAGE value="doc(Pluggable): *" />
+    <MESSAGE value="chore: Modifying the logging config file." />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: Modifying the logging config file." />
   </component>
 </project>

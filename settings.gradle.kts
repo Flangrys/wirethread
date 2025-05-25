@@ -1,7 +1,3 @@
 rootProject.name = "wirethread"
 
-include(":wirethread-core")
-include(":wirethread-network")
-include(":wirethread-plugin")
-include(":wirethread-server")
-include("wirethread-nbt")
+include("wirethread-core", "wirethread-network", "wirethread-plugin", "wirethread-server", "wirethread-nbt")

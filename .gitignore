@@ -8,6 +8,22 @@
 # BlueJ files
 *.ctxt
 
+# IntelliJ IDEA files
+out/
+.idea/
+.idea_modules/
+*.iml
+*.ipr
+*.iws
+
+# Gradle files
+bin/
+build/
+.gradle
+.gradletasknamecache
+gradle-app.setting
+!gradle-wrapper.jar
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
