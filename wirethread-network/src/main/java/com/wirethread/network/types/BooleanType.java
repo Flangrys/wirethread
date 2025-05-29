@@ -1,25 +1,24 @@
 package com.wirethread.network.types;
 
-import com.wirethread.network.buffer.Buffer;
-import com.wirethread.network.buffer.Type;
+import io.netty.buffer.ByteBuf;
 import org.jetbrains.annotations.NotNull;
 
-public record BooleanType() implements Type<Boolean> {
+import java.io.IOException;
+
+public final class BooleanType implements Type<Boolean> {
     @Override
-    public void write(@NotNull Buffer buffer, Boolean value) {
+    public void write(@NotNull ByteBuf buffer, Boolean value) throws IOException {
         buffer.ensureWritable(1);
-        buffer.putByte(buffer.writerIndex(), (byte)(value ? 1 : 0));
-        buffer.advanceWrite(1);
+        buffer.writeByte(value ? 1 : 0);
     }
 
     @Override
-    public Boolean read(@NotNull Buffer buffer) {
+    public Boolean read(@NotNull ByteBuf buffer) throws IOException {
         final byte bool = buffer.getByte(buffer.readerIndex());
-        buffer.advanceRead(1);
-        return switch(bool) {
+        return switch (bool) {
             case 0 -> false;
             case 1 -> true;
-            default -> throw new IllegalStateException("Cannot read < %d > because is an invalid boolean value.".formatted(bool));
+            default -> throw new IllegalStateException("Unexpected value: " + bool + ". Expected 0 or 1.");
         };
     }
 }

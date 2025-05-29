@@ -1,39 +1,56 @@
 package com.wirethread.network.types;
 
-import com.wirethread.network.buffer.Buffer;
-import com.wirethread.network.buffer.Type;
+import io.netty.buffer.ByteBuf;
 import org.jetbrains.annotations.NotNull;
 
-public record RawBytesType(int length) implements Type<byte[]> {
-    @Override
-    public void write(@NotNull Buffer buffer, byte[] value) {
-        if (length != -1 && value.length != length) {
-            throw new IllegalArgumentException("Invalid length for buffer.");
+import java.io.IOException;
+
+public final class RawBytesType implements Type<byte[]> {
+
+    private final int length;
+
+    /**
+     * Creates a new instance of {@link RawBytesType} with a specified length.
+     *
+     * @param length The length of the byte array to read/write. Use -1 for variable length.
+     */
+    public RawBytesType(int length) {
+        if (length < -1 || length == 0) {
+            throw new IllegalArgumentException("Length must be -1 (variable) or a positive integer.");
         }
-
-        if (value.length == 0) return;
-
-        buffer.ensureWritable(value.length);
-        buffer.putBytes(buffer.writerIndex(), value);
-        buffer.advanceWrite(value.length);
+        this.length = length;
     }
 
     @Override
-    public byte[] read(@NotNull Buffer buffer) {
-        int byteArrayLength = buffer.readableBytes();
+    public void write(@NotNull ByteBuf buffer, byte[] value) throws IOException {
+        int actualLength = value.length;
 
-        if (this.length != -1) {
-            byteArrayLength = Math.min(byteArrayLength, this.length);
+        if (length != -1 && actualLength != length) {
+            throw new IllegalArgumentException("Expected byte array of length " + length + ", but got " + actualLength + ".");
         }
 
-        if (byteArrayLength == 0) return new byte[0];
-        if (byteArrayLength <= 0) throw new IllegalArgumentException("Invalid remaining: " + byteArrayLength);
+        if (actualLength > 0) {
+            buffer.ensureWritable(actualLength);
+            buffer.writeBytes(value);
+        }
+    }
 
-        final byte[] byteArray = new byte[byteArrayLength];
+    @Override
+    public byte[] read(@NotNull ByteBuf buffer) throws IOException {
+        int available = buffer.readableBytes();
 
-        buffer.getBytes(buffer.readerIndex(), byteArray);
-        buffer.advanceRead(byteArrayLength);
+        int actualLength = (length == -1) ? available : Math.min(length, available);
 
-        return byteArray;
+        if (actualLength < 0) {
+            throw new IllegalStateException("Negative length encountered while reading bytes.");
+        }
+
+        byte[] result = new byte[actualLength];
+
+        if (actualLength > 0) {
+            buffer.readBytes(result);
+        }
+
+        return result;
     }
 }

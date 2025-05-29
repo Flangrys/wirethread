@@ -5,7 +5,7 @@ public enum ConnectionIntention {
     LOGIN,
     TRANSFER;
 
-    public ConnectionIntention getFromId(int id) {
+    public static ConnectionIntention getFromId(int id) {
         return switch (id) {
             case 1 -> STATUS;
             case 2 -> LOGIN;

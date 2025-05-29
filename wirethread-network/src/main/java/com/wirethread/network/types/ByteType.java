@@ -1,21 +1,19 @@
 package com.wirethread.network.types;
 
-import com.wirethread.network.buffer.Buffer;
-import com.wirethread.network.buffer.Type;
+import io.netty.buffer.ByteBuf;
 import org.jetbrains.annotations.NotNull;
 
-public record ByteType() implements Type<Byte> {
+import java.io.IOException;
+
+public final class ByteType implements Type<Byte> {
     @Override
-    public void write(@NotNull Buffer buffer, Byte value) {
+    public void write(@NotNull ByteBuf buffer, Byte value) throws IOException {
         buffer.ensureWritable(1);
-        buffer.putByte(buffer.writerIndex(), value);
-        buffer.advanceWrite(1);
+        buffer.writeByte(value);
     }
 
     @Override
-    public Byte read(@NotNull Buffer buffer) {
-        final byte value = buffer.getByte(buffer.readerIndex());
-        buffer.advanceRead(1);
-        return value;
+    public Byte read(@NotNull ByteBuf buffer) throws IOException {
+        return buffer.readByte();
     }
 }
