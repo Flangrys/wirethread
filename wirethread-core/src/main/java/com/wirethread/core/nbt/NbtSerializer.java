@@ -1,4 +1,4 @@
-package com.wirethread.nbt;
+package com.wirethread.core.nbt;
 
 import com.wirethread.core.registry.repository.Registrable;
 

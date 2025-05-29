@@ -1,6 +1,6 @@
 package com.wirethread.core.namespaces;
 
-import org.intellij.lang.annotations.Pattern;
+import com.wirethread.core.namespaces.annotations.NamespacePattern;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -12,13 +12,13 @@ public interface Namespaced {
      * Retrieves the namespace associated with this resource.
      * @return A {@link Namespace} object.
      */
-    @Pattern("[a-z0-9_-]")
+    @NamespacePattern.Domain
     @NotNull String getDomain();
 
     /**
      * Return the namespace as a string.
      * @return A {@link Namespace} as a string.
      */
-    @Pattern("[a-z0-9_-/]")
+    @NamespacePattern.Key
     @NotNull String getKey();
 }

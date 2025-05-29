@@ -1,6 +1,5 @@
 package com.wirethread.core.registry.repository;
 
-import com.wirethread.core.exceptions.UnsafeContextOperation;
 import com.wirethread.core.namespaces.Namespace;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -9,17 +8,6 @@ import java.util.List;
 
 public abstract class Registry<T extends Registrable<T>> {
 
-    protected final @NotNull String id;
-
-    /**
-     * Creates a new registry with an immutable namespace.
-     *
-     * @param id The resource location for this registry.
-     */
-    public Registry(@NotNull final String id) {
-        this.id = id;
-    }
-
     /**
      * Register a new entry overriding the existing registry, if one exists.
      *
@@ -27,7 +15,7 @@ public abstract class Registry<T extends Registrable<T>> {
      * @return The namespace of this registry entry.
      * @throws UnsupportedOperationException When this operation weren't supported by the subclass.
      */
-    public abstract @NotNull Namespace register(final @NotNull T entry) throws UnsupportedOperationException, UnsafeContextOperation;
+    public abstract @NotNull Namespace register(final @NotNull T entry) throws UnsupportedOperationException;
 
     /**
      * Unregister an entry by using their namespace.
@@ -36,7 +24,7 @@ public abstract class Registry<T extends Registrable<T>> {
      * @return The removed registry entry.
      * @throws UnsupportedOperationException When this operation weren't supported by the subclass.
      */
-    public abstract @Nullable T unregister(@NotNull Namespace namespace) throws UnsupportedOperationException, UnsafeContextOperation;
+    public abstract @Nullable T unregister(@NotNull Namespace namespace) throws UnsupportedOperationException;
 
     /**
      * Retrieves a registry entry with the namespace given.

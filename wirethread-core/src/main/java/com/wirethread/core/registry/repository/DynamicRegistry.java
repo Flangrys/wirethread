@@ -11,9 +11,17 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.ReentrantLock;
 
-public final class DynamicRegistry<T extends Registrable<T>> extends Registry<T> {
+public abstract class DynamicRegistry<T extends Registrable<T>> extends Registry<T> {
 
     private final ReentrantLock lock;
+
+    /**
+     * Maps an entry with an old format string-id
+     *
+     * <p>For compatibility reasons, this map is used to relate
+     * old ids with the newest namespace of it.
+     */
+    private final ConcurrentMap<Integer, T> mapEntriesById;
 
     /**
      * Maps an entry to a namespace.
@@ -41,16 +49,14 @@ public final class DynamicRegistry<T extends Registrable<T>> extends Registry<T>
 
     /**
      * Creates a new registry with an immutable namespace.
-     *
-     * @param id The resource location for this registry.
      */
-    public DynamicRegistry(@NotNull String id) {
-        super(id);
+    public DynamicRegistry() {
 
         this.lock = new ReentrantLock();
 
         this.mapEntriesByNamespace = new ConcurrentHashMap<>();
         this.mapNamespacesByEntry = new ConcurrentHashMap<>();
+        this.mapEntriesById = new ConcurrentHashMap<>();
     }
 
     @Override
@@ -63,7 +69,7 @@ public final class DynamicRegistry<T extends Registrable<T>> extends Registry<T>
         // Prevent multiple threads to registry at the same time.
         this.lock.lock();
 
-        final Namespace namespace = new Namespace(entry.getDomain(), entry.getKey());
+        final Namespace namespace = entry.getNamespace();
 
         try {
             this.mapEntriesByNamespace.put(namespace, entry);

@@ -15,7 +15,6 @@ public final class StaticRegistry<T extends Registrable<T>> extends Registry<T> 
      * @param id The resource location for this registry.
      */
     public StaticRegistry(@NotNull String id, final @NotNull ResourceManager resourceManager) {
-        super(id);
     }
 
     /**
